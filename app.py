@@ -236,8 +236,8 @@ def generate_questions(resume):
     questions.append(f"Great! {resume['name']} you have sucessfully completed the interview practice session")
     return questions
 
-if __name__ == "__main__":
-    app.run(debug=False,host='0.0.0.0') 
+# if __name__ == "__main__":
+#     app.run(debug=False,host='0.0.0.0') 
 
  
 
