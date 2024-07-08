@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - Interview Mentor</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/detail.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aptitude.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/icon-192x192.png') }}" type="image/png" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+          <h1>Interview Mentor</h1>
+        </div>
+        <div class="back">
+          <a href="/index"><i class="bi bi-arrow-left-circle"></i></a>
+        </div>
+      </div>
+    <div class="contain">
+        <center>
+          <div class="font">
+          <h1>Resume Details</h1>
+        </div>
+      <form action="/submit_resume" method="post">
+        <div class="field">
+          <label for="name">Name </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <div class="field">
+            <label for="edu">Education:</label>
+            <input type="text" id="ed" name="education" placeholder="Degree Branch">
+        </div>
+       
+        <div class="field">
+            <label for="skill1">Skill 1:</label>
+            <input type="text" id="skill1" name="skill1" placeholder="Ex: Python,Java etc.." required>
+        </div>
+        <div class="field">
+            <label for="skill2">Skill 2:</label>
+            <input type="text" id="skill2" name="skill2" placeholder="Ex: C,C#,C++" required>
+        </div>
+        <div class="field">
+            <label for="Intern">Internship:</label>
+            <input type="text" id="Intern" name="internship" placeholder="Enter the Internship name">
+        </div>
+        <div class="field">
+            <label for="pro1">Project 1:</label>
+            <input type="text" id="pro1" name="project1" placeholder="Enter the project name">
+        </div>
+        <div class="field">
+            <label for="pro2">Project 2:</label>
+            <input type="text" id="pro2" name="project2" placeholder="Enter the project name">
+        </div>
+        <div class="field">
+            <label for="pro3">Project 3:</label>
+            <input type="text" id="pro3" name="project3" placeholder="Enter the project name">
+        </div>
+        <input type="submit" value="Submit" class="button">
+      </form>
+    </center>
+    </div><br><br>
+</body>
+</html>

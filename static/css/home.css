@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 650px;
+}
+
+.content{
+    text-align: center;  
+}
+
+p{
+    margin-bottom:30px;
+    font-family: "Montserrat", sans-serif;
+}
+.content a {
+    text-decoration: none;
+    background: linear-gradient(to right, #002bff, #5100f3);
+    color: white;
+    padding: 10px;
+    width: 100px;
+    border-radius: 18px;
+    display: inline-block; /* Ensures the link behaves like a block element */
+    text-align: center; /* Centers the text horizontally */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+}
+
+.content a:hover {
+    background: linear-gradient(to right, #5100f3, #002bff); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.content a:active {
+    transform: scale(0.95); /* Slightly scale down when clicked */
+}
+
+
+.content h1 {
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 40px;
+    background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text;
+    color: transparent;
+}
+
+@media (max-width:400px){
+    .container{
+        margin-top: 10%;
+    }
+}

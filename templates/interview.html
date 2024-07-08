@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR - Interview Mentor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aptitude.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icons/icon-192x192.png') }}" type="image/png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+          <h1>Interview Mentor</h1>
+        </div>
+        <div class="back">
+          <a href="/rounds"><i class="bi bi-arrow-left-circle"></i></a>
+        </div>
+      </div>
+    <div class="containe">
+        
+        <h1>HR</h1>
+        <div id="questions" class="content"></div>
+    </div>
+    <div class="feedback">
+        
+        <div id="response"></div>
+    </div>
+    <script>
+        const questions = {{ questions | safe }};
+        const resume = {{ resume | safe }};
+        let currentQuestion = 0;
+        let feedbacks = [];
+
+        function askQuestion() {
+            if (currentQuestion < questions.length) {
+                const question = questions[currentQuestion];
+                document.getElementById('questions').innerHTML = `<p>${question}</p>`;
+                textToSpeech(question);
+            } else {
+                showFeedback();
+            }
+        }
+
+        function textToSpeech(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+            speech.onend = () => {
+                listenForResponse();
+            };
+        }
+
+        function listenForResponse() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.onstart = () => {
+                console.log('Voice recognition started. Try speaking into the microphone.');
+            };
+            recognition.onresult = (event) => {
+                const response = event.results[0][0].transcript;
+                console.log('You said: ' + response);
+                document.getElementById('response').innerHTML = `<h4>Previous Response : </h4><p><h5>You said:</h5><p> ${response}</p>`;
+                analyzeResponse(response);
+            };
+            recognition.start();
+        }
+
+        function analyzeResponse(response) {
+            axios.post('/analyze', { response: response })
+                .then((result) => {
+                    const feedback = result.data.feedback;
+                    feedbacks.push(feedback);
+                    document.getElementById('response').innerHTML += `<h5>Feedback:</h5><p> ${feedback}</p>`;
+                    currentQuestion++;
+                    askQuestion();
+                })
+                .catch((error) => {
+                    console.error('There was an error!', error);
+                });
+        }
+
+        function showFeedback() {
+            let feedbackHtml = '<h2>Session Feedback</h2>';
+            feedbacks.forEach((feedback, index) => {
+                feedbackHtml += `<p><strong>Question ${index + 1}:</strong> ${feedback}</p>`;
+            });
+            document.getElementById('response').innerHTML = feedbackHtml;
+        }
+
+        window.onload = askQuestion;
+    </script>
+</body>
+</html>

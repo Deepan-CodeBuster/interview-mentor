@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rounds - Interview Mentor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rounds.css') }}">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='icons/icon-192x192.png') }}" type="image/png" />
+  </head>
+  <body>
+    <div class="loading-overlay" id="loading-overlay">
+      <div class="spinner"></div>
+      <p class="loading-message">Get ready for your first aptitude round.</p>
+  </div>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <h1>Interview Mentor</h1>
+        </div>
+        <div class="back">
+          <a href="/index"><i class="bi bi-arrow-left-circle"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="cont">
+      <header>
+        <h1>Interview Rounds</h1>
+        <p>Prepare for your interview with these essential rounds:</p>
+      </header>
+      <div class="box">
+        <div class="round">
+          <h2>1. Aptitude Round</h2>
+          <p>Get ready with these key sections:</p>
+          <ul>
+            <li>English Proficiency</li>
+            <li>Quantitative Aptitude</li>
+            <li>Verbal Reasoning</li>
+            <li>Technical Written Test</li>
+          </ul>
+        </div>
+        <div class="round">
+          <h2>2. Technical Interview Round</h2>
+          <p>Expect questions on programming languages:</p>
+          <ul>
+            <li>C, C++, Java</li>
+            <li>HTML, JavaScript</li>
+            <li>Data Structures</li>
+          </ul>
+        </div>
+        <div class="round" style="height: 254px">
+          <h2>3. HR Interview Round</h2>
+          <p>Showcase your:</p>
+          <ul>
+            <li>Communication Skills</li>
+            <li>Soft Skills</li>
+            <li>Confidence Level</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <center>
+        <a href="javascript:void(0);" class="btn" onclick="showLoadingAndRedirect()">Get Started</a>
+      </center>
+    </div>
+    <br>
+    <br>
+     
+    <script>
+      function showLoadingAndRedirect() {
+    // Show the loading overlay
+    document.getElementById('loading-overlay').style.display = 'flex';
+    
+    // Simulate a loading delay
+    setTimeout(function() {
+        // Redirect to the resume page
+        window.location.href = '/aptitude';
+    }, 3000); // Adjust the delay as needed (3000ms = 3 seconds)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add any additional initialization code here if needed
+});
+
+    </script>
+  </body>
+</html>

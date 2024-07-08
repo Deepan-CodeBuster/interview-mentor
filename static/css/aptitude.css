@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+body {
+    background-color: black;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.back a{
+    text-decoration: none;
+    display: flex;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 25px;
+    background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    margin: 15px;
+   
+}
+
+.back a:hover{
+    color: white;
+    text-decoration: underline;
+    transition: 1s;
+}
+
+.logo h1{
+    display: flex;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 30px;
+    background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    margin-left: 15px;
+}
+
+  .container {
+    background-color: #1f1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%; /* Adjusted width for mobile devices */
+    max-width: 400px; /* Max width for larger screens */
+    margin: 20px auto; /* Center container horizontally */
+    max-height: 80vh; /* Added max-height for better vertical spacing */
+    overflow-y: auto; /* Added scroll when content exceeds max-height */
+    margin-top: 70px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+  }
+  
+  #quiz-container {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  #results-container {
+    display: none;
+  }
+  
+  #question {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  #choices {
+    list-style-type: none;
+    padding: 0;
+    text-align: left; /* Align choices to the left */
+  }
+
+  #choices:hover{
+    color: black;
+    font-weight: 500;
+  }
+  
+  #choices li {
+    margin-bottom: 10px;
+  }
+  
+  #choices label {
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f0f0f03d; /* Light background for options */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  #choices label:hover {
+    background-color: #e0e0e0; /* Darker background on hover */
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(to right, #002bff, #5100f3);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    width: 150px; /* Fixed width for consistent button size */
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, #5100f3, #002bff); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+  }
+  
+  #timer {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  #time {
+    font-weight: bold;
+  }
+  
+  .results {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .flexs {
+    /* This class is unchanged as per your request */
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+/* Loading overlay styles */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #6a11cb;
+  border-right: 12px solid #ff2fee;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-message {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+  
+  @media (max-width: 414px) {
+    /* Adjust for iPhone 12 (414px width) */
+    .container {
+      width: 80%; /* Adjusted width for iPhone 12 */
+    }
+    .logo h1{
+        display: flex;
+        font-family: "Playwrite IT Moderna", cursive;
+        font-size: 20px;
+        background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+        -webkit-background-clip: text; 
+        background-clip: text;
+        color: transparent;
+        margin-left: 10px;
+    }
+
+    .back a{
+        margin-top: px;
+        margin-right: 10px;
+        font-size: 20px;  
+    }
+
+    #question{
+      font-size: 15px;
+    }
+
+  }
+  

@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+body{
+    background-color: black;
+    color: white;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.back a{
+    text-decoration: none;
+    display: flex;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 25px;
+    background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    margin: 15px;
+   
+}
+
+.back a:hover{
+    color: white;
+    text-decoration: underline;
+    transition: 1s;
+}
+
+.logo{
+    display: flex;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-size: 15px;
+    background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    margin-left: 15px;
+}
+
+/* Container styles */
+.cont {
+    line-height: 1.6;
+    margin:auto;
+    background-color: #000; /* Dark background for container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+}
+
+.box{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+/* Round styles */
+.round {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #1f1e1e; /* Dark gray background for round sections */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.round h2 {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.round p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #fff; /* White text color for contrast */
+}
+
+.round ul {
+    
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.round ul li {
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 5px;
+    font-size: 16px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.round ul li:before {
+    content: '*';
+    background: linear-gradient(to right, #32e7ff ,#ff2fee, #915aff);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+.round:last-child {
+    margin-bottom: 0;
+}
+
+.button a{
+    text-decoration: none;
+    background: linear-gradient(to right, #002bff, #5100f3);
+    color: white;
+    padding: 10px;
+    width: 100px;
+    border-radius: 18px;
+    display: inline-block; /* Ensures the link behaves like a block element */
+    text-align: center; /* Centers the text horizontally */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button a:hover{
+    background: linear-gradient(to right, #5100f3, #002bff); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.button a:active{
+    transform: scale(0.95); /* Slightly scale down when clicked */
+}
+
+/* Loading overlay styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #6a11cb;
+    border-right: 12px solid #ff2fee;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-message {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+    input[type="text"], textarea {
+        width: calc(100% - 30px);
+    }
+}
+
+
+@media (max-width:1205px) {
+    .logo{
+        display: flex;
+        font-family: "Playwrite IT Moderna", cursive;
+        font-size: 10px;
+        background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+        -webkit-background-clip: text; 
+        background-clip: text;
+        color: transparent;
+        margin-left: 10px;
+    }
+
+    .back a{
+        margin-top: px;
+        margin-right: 10px;
+        font-size: 20px;
+        
+    }
+
+    header p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+    }
+
+    header h1 {
+        font-family: "Montserrat", sans-serif;
+        background: linear-gradient(to right, rgb(50, 231, 255) ,#ff2fee, #915aff);
+        -webkit-background-clip: text; 
+        background-clip: text;
+        color: transparent;
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .box{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

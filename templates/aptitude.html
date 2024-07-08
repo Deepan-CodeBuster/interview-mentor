@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aptitude - Interview Mentor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aptitude.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link rel="icon" href="{{ url_for('static', filename='icons/icon-192x192.png') }}" type="image/png" />
+</head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <h1>Interview Mentor</h1>
+      </div>
+      <div class="back">
+        <a href="/rounds"><i class="bi bi-arrow-left-circle"></i></a>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Aptitude Buster</h1>
+      <div id="quiz-container">
+        <div id="question"></div>
+        <ul id="choices"></ul>
+        <div id="timer">Time left: <span id="time"></span></div>
+        <button onclick="submitAnswer()">Submit Answer</button>
+      </div>
+      <div id="results-container" style="display: none">
+        <div id="results"></div>
+        <div class="flexs">
+          <button
+            id="next-round"
+            class="btn"
+            style="display: none"
+            onclick="nextRound()"
+          >
+            Next Round
+          </button>
+          <button
+            id="retry"
+            class="btn"
+            style="display: none"
+            onclick="retryQuiz()"
+          >
+            Retry Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+     <!-- Loading Overlay -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="spinner"></div>
+    <div class="loading-message">Good job! Get ready for second technical round</div>
+  </div>
+    <script src="{{ url_for('static', filename='js/aptitude.js') }}"></script>
+  </body>
+</html>
