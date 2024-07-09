@@ -22,15 +22,15 @@ resume = {}
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('index.html')
+    return render_template('indx.html')
 
 @app.route('/rounds')
 def rounds():
-    return render_template('rounds.html')
+    return render_template('round.html')
 
 @app.route('/aptitude')
 def aptitude():
-    return render_template('aptitude.html')
+    return render_template('aptitud.html')
 
 questions = [
     {
@@ -69,7 +69,7 @@ questions = [
 def index():
     session['current_question'] = 0
     session['completed'] = False
-    return render_template('coding.html')
+    return render_template('codig.html')
 
 @app.route('/get_question', methods=['GET'])
 def get_question():
@@ -162,7 +162,7 @@ def evaluate_style(code):
 
 @app.route('/resume')
 def resume_page():
-    return render_template('details.html')
+    return render_template('detail.html')
 
 @app.route('/submit_resume', methods=['POST'])
 def submit_resume():
@@ -191,7 +191,7 @@ def submit_resume():
 def interview():
     global resume
     questions = generate_questions(resume)
-    return render_template('interview.html', questions=questions, resume=resume)
+    return render_template('intervie.html', questions=questions, resume=resume)
 
 
 
