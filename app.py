@@ -34,7 +34,7 @@ def aptitude():
 
 questions = [
     {
-        "question": "Write a function to add two numbers.",
+        "question": "Write a function to add 2 & 3 numbers.",
         "code": "def add(a, b):\n    return a + b",
         "expected_output": "print(add(2, 3))",
         "expected_result": "5"
